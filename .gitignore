@@ -1,0 +1,8 @@
+.eggs/
+.ipynb_checkpoints/
+.binomial_mixture_model.egg-info/
+*.pyc
+_pycache_/
+*pytest*
+*.txt
+PKG-INFO
