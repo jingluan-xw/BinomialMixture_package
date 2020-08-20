@@ -49,10 +49,26 @@ Jing Luan is an IAS fellow supported by the Institute for Advanced Study while s
 
 ## BinomialMixture
 
-class **BinomialMixture**(n_components, tolerance=1e-5, max_step=1000, verbose=True, random_state=None)
+_class_ **BinomialMixture** _(n_components, tolerance=1e-5, max_step=1000, verbose=True, random_state=None)_
 
-Binomial Mixture.
+Binomial Mixture: Representation of a mixture of one or more than one different binomial distributions. The class allows to estimate the parameters of a Binomial mixture distribution.
 
-Representation of a mixture of one or more than one different binomial distributions. The class allows to estimate the parameters of a Binomial mixture distribution.
+### Parameters:
 
-$ BMM.pmf(n | N, \pi, \theta)$
+* __n_components: int__: the number of mixture components.
+* __tolerance: float, default 1e-5__: one of the conditions for stopping the Expectation-Maximization iteration. This condition says that when the log-likelihood changes by less or equal to `tolerance` per iteration, the iteration can be stopped.
+* __max_step: int, default 1000__: the other condition for stopping the Expectation-Maximization iterations. This condition says that when the number of iterations exceed `max_step` the iteration is stopped.
+* __verbose: bool, default True__: prints the intermediate fitting results during the iteration.
+* __random_state: int, default None__: the random seed used to initialize the parameters in the model.
+
+### Attributes:
+
+* __pi_list: array like, shape(n_components, )__: the weights (prevalences) of each mixture component.
+* __theta_list: array like, shape(n_components, )__: the binomial probabilities of each binomial component.
+
+### Methods:
+
+* __fit(X[,y])__: estimate model parameters with the Expectation-Maximization algorithm.
+* __predict(X)__: predict the posterior probabilities for each sample belonging to each mixture component.
+* __calc_AIC_BIC(X)__: calculate the Akaike Information Criterion and the Bayesian Information Criterion.
+* __p_value(X, side="right")__: after a binomial mixture model is fitted, this method calculates the p values of all samples (either training set or test set). The argument `side`, if set to "right" returns right-sided p-values, if set to "left" returns left-side p-values, if set to `both` returns double-sided p-values.
