@@ -4,10 +4,10 @@
 
 In this repository, I wrap the Binomial Mixture Model in a package that I developed in my
 other (private) repository [Binomial-Mixture-Model-with-EM-Algorithm](https://github.com/jingluan-xw/Binomial-Mixture-Model-with-EM-Algorithm). Details about this model, the step-by-step development,
-etc can be found in that repository and links therein. Please contact me if you like to get access to that
+etc can be found in that repository and links therein. The mathematical details about this model is explained in [this article](https://jingluan-xw.medium.com/binomial-mixture-model-with-expectation-maximum-em-algorithm-feeaf0598b60). Please contact me if you like to get access to that
 repository.
 
-This repository is a practice of mine for setting up a package. It includes the following
+This repository includes the following
 subdirectories and files.
 
 * binomial_mixture_model/ contains a python script named "BinomialMixture.py" in which the `BinomialMixture` class is defined. A detailed description about its parameters, attributes and methods can be found in the end. The other python script named "number_components.py" defines
